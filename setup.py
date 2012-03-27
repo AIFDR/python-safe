@@ -24,7 +24,6 @@ setup(name          = 'python-safe',
                   'safe.impact_functions'],
       package_dir = {'safe': 'safe'},
       package_data = {'safe': ['test/data/*']},
-      zip_safe=False,
       classifiers   = [
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
