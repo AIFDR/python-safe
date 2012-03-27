@@ -6,8 +6,8 @@ try:
 except ImportError:
     from distutils.core import setup
 
-# Get text from README.txt
-readme_text = file('README.rst', 'rb').read()
+def read(fname):
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(name          = 'python-safe',
       version       = '0.1.3',
@@ -19,7 +19,7 @@ setup(name          = 'python-safe',
       maintainer        = 'Ariel Núñez',
       maintainer_email  = 'ingenieroariel@gmail.com',
       url   = 'http://github.com/AIFDR/python-safe',
-      long_description = readme_text,
+      long_description = read('README.rst'),
       packages = ['safe'],
       install_requires  = [],
       tests_require = ['nose'],
