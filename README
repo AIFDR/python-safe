@@ -22,8 +22,8 @@ Installation
    If you do not have ``pip`` installed but only ``easy_install``,
    you can do ``easy_install pip`` and then use it to install ``python-safe``.
 
-#. Run the tests::
+#. To verify everything is working as it should do, open a python shell and do::
 
-    nosetests safe
+   import safe
+   safe.test()
 
-   Please note that nose can only find the tests if you did not use easy_installs, pip uses flat directories instead of eggs. If it says there are 0 tests, it means you probably installed the package without pip.
