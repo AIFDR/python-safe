@@ -24,6 +24,8 @@ Installation
 
 #. To verify everything is working as it should do, open a python shell and do::
 
-   import safe
-   safe.test()
+    import safe
+    safe.test()
 
+   You can pass additional parameters to the test function, for example: ``verbose=2``
+   to view the test names.
