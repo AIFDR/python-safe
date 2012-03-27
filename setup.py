@@ -22,7 +22,8 @@ setup(name          = 'python-safe',
                   'safe.storage',
                   'safe.engine',
                   'safe.impact_functions'],
-      package_data = ['safe/test/data']
+      package_dir = {'safe': 'safe'},
+      package_data = {'safe': ['test/data/*']},
       classifiers   = [
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',

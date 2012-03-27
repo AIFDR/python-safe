@@ -1,1 +1,1 @@
-recursive-include safe *.shp *.shx *.prj *.dbf *.keywords *.sld *.tif *.asc
+graft safe/test/data
