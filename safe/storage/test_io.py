@@ -686,8 +686,8 @@ class Test_IO(unittest.TestCase):
         """Rasters can be read and written correctly in different formats
         """
 
-        # FIXME(Ariel): Add dataset in .asc format to TESTDATA and this test -March, 2012
-        for rastername in ['earthquake.tif',]:
+        for rastername in ['earthquake.tif',
+                           'test_grid.asc']:
 
             filename = '%s/%s' % (TESTDATA, rastername)
             R1 = read_layer(filename)
@@ -877,8 +877,7 @@ class Test_IO(unittest.TestCase):
         """Linear and quantile bins are correct
         """
 
-        for filename in ['%s/population_padang_1.asc' % TESTDATA,
-                         '%s/test_grid.asc' % TESTDATA]:
+        for filename in ['%s/test_grid.asc' % TESTDATA,]:
 
             R = read_layer(filename)
             min, max = R.get_extrema()
@@ -1033,7 +1032,7 @@ class Test_IO(unittest.TestCase):
         assert same_API(V, R, exclude=exclude)
 
         for layername in ['schools.shp',
-                          'Lembang_Earthquake_Scenario.asc']:
+                          'test_grid.asc']:
 
             filename = '%s/%s' % (TESTDATA, layername)
             L = read_layer(filename)
