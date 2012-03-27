@@ -454,21 +454,21 @@ class Test_IO(unittest.TestCase):
             assert max_dist > 0
 
         # Check integrity of each feature
-        expected_features = {13: {'AREA': 28760732,
-                                  'POP_2007': 255383,
-                                  'KECAMATAN': 'kali deres',
-                                  'KEPADATAN': 60,
-                                  'PROPINSI': 'DKI JAKARTA'},
-                             21: {'AREA': 13155073,
-                                  'POP_2007': 247747,
-                                  'KECAMATAN': 'kramat jati',
-                                  'KEPADATAN': 150,
-                                  'PROPINSI': 'DKI JAKARTA'},
-                             35: {'AREA': 4346540,
-                                  'POP_2007': 108274,
-                                  'KECAMATAN': 'senen',
-                                  'KEPADATAN': 246,
-                                  'PROPINSI': 'DKI JAKARTA'}}
+        # FIXME(Ariel): The features selected have the same attributes,
+        #this test should be enhanced by selecting features with different values.
+        expected_features = {13: {'roof': 'tile',
+                                  'walls': 'brick',
+                                  'levels': '2',
+                                  'structure': 'reinforced_masonry'},
+                             21: {'roof': 'tile',
+                                  'walls': 'brick',
+                                  'levels': '2',
+                                  'structure': 'reinforced_masonry'},
+                             35: {'roof': 'tile',
+                                  'walls': 'brick',
+                                  'levels': '2',
+                                  'structure': 'reinforced_masonry'}}
+
 
         field_names = None
         for i in range(N):
@@ -510,7 +510,7 @@ class Test_IO(unittest.TestCase):
                                   geometry_new[i],
                                   rtol=1.0e-6)  # OGR works in single precision
 
-            assert len(attributes_new[i]) == 8
+            assert len(attributes_new[i]) == 6
             for key in attributes_new[i]:
                 assert attributes_new[i][key] == attributes[i][key]
 
@@ -686,7 +686,7 @@ class Test_IO(unittest.TestCase):
         """Rasters can be read and written correctly in different formats
         """
 
-        #FIXME(Ariel): Add dataset in .asc format to TESTDATA and this test -March, 2012
+        # FIXME(Ariel): Add dataset in .asc format to TESTDATA and this test -March, 2012
         for rastername in ['earthquake.tif',]:
 
             filename = '%s/%s' % (TESTDATA, rastername)
