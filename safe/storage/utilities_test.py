@@ -6,29 +6,17 @@ import types
 import numpy
 
 # Find parent parent directory to path
-# NOTE: This must match Makefile target testdata
-# FIXME (Ole): Use environment variable for this.
-pardir = os.path.abspath(os.path.join(os.path.dirname(__file__),
-                                      '..',
-                                      '..'))  # Assuming test data two lvls up
-
-# Location of test data
-TESTDATANAME = 'riab_test_data'
-TESTREPO = 'http://www.aifdr.org/svn/%s' % TESTDATANAME
-TESTDATA = os.path.join(pardir, TESTDATANAME)
-
-DEMODATANAME = 'riab_demo_data'
-DEMOREPO = 'http://www.aifdr.org/svn/%s' % DEMODATANAME
-DEMODATA = os.path.join(pardir, DEMODATANAME)
+# Path to a directory called data at the same level of the parent module.
+TESTDATA = os.path.abspath(os.path.join(os.path.dirname(__file__),
+                                        '..', '..', 'data')) 
 
 # Known feature counts in test data
-FEATURE_COUNTS = {'lembang_schools.shp': 144,
-                  'tsunami_exposure_BB.shp': 7529,
+FEATURE_COUNTS = {'schools.shp': 144,
+                  'tsunami_exposure.shp': 7529,
                   'kecamatan_geo.shp': 42,
-                  'Padang_WGS84.shp': 3896,
-                  'OSM_building_polygons_20110905.shp': 34960,
+                  'buildings.shp': 3896,
                   'indonesia_highway_sample.shp': 2,
-                  'OSM_subset.shp': 79}
+                  'buildings_poly.shp': 79}
 
 # For testing
 GEOTRANSFORMS = [(105.3000035, 0.008333, 0.0, -5.5667785, 0.0, -0.008333),
