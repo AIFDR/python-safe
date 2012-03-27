@@ -686,7 +686,7 @@ class Test_IO(unittest.TestCase):
         """Rasters can be read and written correctly in different formats
         """
 
-        for rastername in ['Earthquake_Ground_Shaking_clip.tif',
+        for rastername in ['earthquake.tif',
                            'Population_2010_clip.tif',
                            'shakemap_padang_20090930.asc',
                            'population_padang_1.asc',
@@ -779,9 +779,7 @@ class Test_IO(unittest.TestCase):
         """
 
         # Read files with -9999 as nominated nodata value
-        for rastername in ['Population_2010_clip.tif',
-                           'Lembang_Earthquake_Scenario.asc',
-                           'Earthquake_Ground_Shaking.asc']:
+        for rastername in ['earthquake.tif',]:
 
             filename = '%s/%s' % (TESTDATA, rastername)
             R = read_layer(filename)
@@ -849,7 +847,7 @@ class Test_IO(unittest.TestCase):
         """Raster extrema (including NAN's) are correct.
         """
 
-        for rastername in ['Earthquake_Ground_Shaking_clip.tif',
+        for rastername in ['earthquake.tif',
                              'Population_2010_clip.tif',
                              'shakemap_padang_20090930.asc',
                              'population_padang_1.asc',
@@ -943,9 +941,9 @@ class Test_IO(unittest.TestCase):
         """Bounding box is correctly extracted from file.
 
         # Reference data:
-        gdalinfo Earthquake_Ground_Shaking_clip.tif
+        gdalinfo earthquake.tif
         Driver: GTiff/GeoTIFF
-        Files: Earthquake_Ground_Shaking_clip.tif
+        Files: earthquake.tif
         Size is 345, 263
         Coordinate System is:
         GEOGCS["WGS 84",
@@ -1002,17 +1000,17 @@ class Test_IO(unittest.TestCase):
 
         # Select correct reference bbox for rasters
         if float(z) < 17:
-            ref_bbox['Earthquake_Ground_Shaking_clip.tif'] = [99.3641696,
+            ref_bbox['earthquake.tif'] = [99.3641696,
                                                               -2.2031806,
                                                               102.2411696,
                                                               -0.0041806]
         else:
-            ref_bbox['Earthquake_Ground_Shaking_clip.tif'] = [99.36,
+            ref_bbox['earthquake.tif'] = [99.36,
                                                               -2.199,
                                                               102.237,
                                                               0.0]
 
-        for filename in ['Earthquake_Ground_Shaking_clip.tif',
+        for filename in ['earthquake.tif',
                          'tsunami_exposure_BB.shp']:
             bbox = get_bounding_box(os.path.join(TESTDATA, filename))
             msg = ('Got bbox %s from filename %s, but expected %s '
