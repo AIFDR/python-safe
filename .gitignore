@@ -6,6 +6,7 @@ build
 target
 *.mo
 dist
+MANIFEST
 
 # OSX specific
 .Python
