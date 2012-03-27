@@ -11,7 +11,8 @@ Installation
 
    For Mac OSX::
 
-    brew install numpy gdal
+    pip install numpy nose
+    brew install gdal
     
 
 #. Install this package::
