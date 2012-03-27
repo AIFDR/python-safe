@@ -13,10 +13,12 @@ Installation
 
    If you do not have ``pip`` installed but only ``easy_install``,
    you can do::
-             sudo easy_install pip
 
-   Also, if you are not under a virtualenv (hint: you should!) you can do::
-             sudo pip install python-safe
+    sudo easy_install pip
+
+   If you are not under a virtualenv (you should) you can do::
+   
+    sudo pip install python-safe
 
 #. Run the tests::
 
