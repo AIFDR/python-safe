@@ -12,7 +12,7 @@ Installation
     pip install python-safe
 
    If you do not have ``pip`` installed but only ``easy_install``,
-   you can do::
+   you can run the following line to get pip and then try again::
 
     sudo easy_install pip
 
