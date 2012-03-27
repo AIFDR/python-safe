@@ -10,7 +10,7 @@ except ImportError:
 readme_text = file('README.rst', 'rb').read()
 
 setup(name          = 'python-safe',
-      version       = '0.1.1',
+      version       = '0.1.2',
       description   = 'Spatial Analysis F* Engine',
       license       = 'BSD',
       keywords      = 'gis vector feature raster data',
