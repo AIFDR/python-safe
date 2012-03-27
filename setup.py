@@ -8,7 +8,7 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(name          = 'python-safe',
-      version       = '0.1.8',
+      version       = '0.1.9',
       description   = 'Spatial Analysis F* Engine',
       license       = 'BSD',
       keywords      = 'gis vector feature raster data',
