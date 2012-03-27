@@ -453,7 +453,8 @@ class Test_IO(unittest.TestCase):
 
         # Check integrity of each feature
         # FIXME(Ariel): The features selected have the same attributes,
-        #this test should be enhanced by selecting features with different values.
+        # this test should be enhanced by selecting features with
+        # different values.
         expected_features = {13: {'roof': 'tile',
                                   'walls': 'brick',
                                   'levels': '2',
@@ -466,7 +467,6 @@ class Test_IO(unittest.TestCase):
                                   'walls': 'brick',
                                   'levels': '2',
                                   'structure': 'reinforced_masonry'}}
-
 
         field_names = None
         for i in range(N):

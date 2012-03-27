@@ -8,7 +8,7 @@ import numpy
 # Find parent parent directory to path
 # Path to a directory called data at the same level of the parent module.
 TESTDATA = os.path.abspath(os.path.join(os.path.dirname(__file__),
-                                        '..', '..', 'data')) 
+                                        '..', '..', 'data'))
 
 # Known feature counts in test data
 FEATURE_COUNTS = {'schools.shp': 144,
