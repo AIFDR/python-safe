@@ -986,7 +986,7 @@ class Test_IO(unittest.TestCase):
             z = z[:-1]  # Remove trailing comma
 
         # Reference bbox for vector data
-        ref_bbox = {'tsunami_exposure_BB.shp': [150.124,
+        ref_bbox = {'tsunami_exposure.shp': [150.124,
                                                 -35.7856,
                                                 150.295,
                                                 -35.6546]}
@@ -1004,7 +1004,7 @@ class Test_IO(unittest.TestCase):
                                                               0.0]
 
         for filename in ['earthquake.tif',
-                         'tsunami_exposure_BB.shp']:
+                         'tsunami_exposure.shp']:
             bbox = get_bounding_box(os.path.join(TESTDATA, filename))
             msg = ('Got bbox %s from filename %s, but expected %s '
                    % (str(bbox), filename, str(ref_bbox[filename])))
