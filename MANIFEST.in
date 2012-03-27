@@ -1,2 +1,1 @@
-recursive-include safe *.py
-recursive-include data *.shp *.shx *.prj *.dbf *.keywords *.sld *.tif *.asc
+recursive-include safe *.shp *.shx *.prj *.dbf *.keywords *.sld *.tif *.asc

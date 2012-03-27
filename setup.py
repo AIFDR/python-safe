@@ -18,7 +18,11 @@ setup(name          = 'python-safe',
       maintainer_email  = 'ingenieroariel@gmail.com',
       url   = 'http://github.com/AIFDR/python-safe',
       long_description = read('README'),
-      packages = ['safe'],
+      packages = ['safe',
+                  'safe.storage',
+                  'safe.engine',
+                  'safe.impact_functions'],
+      package_data = ['safe/test/data']
       classifiers   = [
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
