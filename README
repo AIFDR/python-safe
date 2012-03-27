@@ -14,6 +14,7 @@ Installation
    .. note:: If you do not have ``pip`` installed but only ``easy_install``,
          you can do::
              sudo easy_install pip
+
          Also, if you are not under a virtualenv (hint: you should!) you can do::
              sudo pip install python-safe
 
@@ -21,4 +22,4 @@ Installation
 
     nosetests safe
 
-   ..note :: Please note that nose can only find the tests if you did not use easy_installs, pip uses flat directories instead of eggs. If it says there are 0 tests, it means you probably installed the package without pip.
+   .. note :: Please note that nose can only find the tests if you did not use easy_installs, pip uses flat directories instead of eggs. If it says there are 0 tests, it means you probably installed the package without pip.
