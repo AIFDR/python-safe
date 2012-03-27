@@ -111,9 +111,7 @@ class Test_IO(unittest.TestCase):
             raise Exception(msg)
 
         # Read and verify test data
-        for vectorname in ['schools.shp',
-                           'tsunami_exposure.shp',
-                           'buildings.shp']:
+        for vectorname in ['schools.shp', ]:
 
             filename = '%s/%s' % (TESTDATA, vectorname)
             layer = read_layer(filename)
@@ -237,12 +235,12 @@ class Test_IO(unittest.TestCase):
                     assert L.get_projection() == layer.get_projection()
                     #print [a['FLOOR_AREA'] for a in L.attributes]
                 elif vectorname == 'tsunami_exposure.shp':
-                    L = layer.get_topN(attribute='STR_VALUE', N=N)
+                    L = layer.get_topN(attribute='NEXIS_PEOP', N=N)
                     assert len(L) == N
                     assert L.get_projection() == layer.get_projection()
-                    val = [a['STR_VALUE'] for a in L.data]
+                    val = [a['NEXIS_PEOP'] for a in L.data]
 
-                    ref = [a['STR_VALUE'] for a in attributes]
+                    ref = [a['NEXIS_PEOP'] for a in attributes]
                     ref.sort()
 
                     assert numpy.allclose(val, ref[-N:],
@@ -808,7 +806,7 @@ class Test_IO(unittest.TestCase):
             if layername == 'tsunami_exposure.shp':
                 attributes = L.get_data()
 
-                for name in ['STR_VALUE', 'CONT_VALUE']:
+                for name in ['NEXIS_PEOP', ]:
                     minimum, maximum = L.get_extrema(name)
                     assert minimum <= maximum
 
