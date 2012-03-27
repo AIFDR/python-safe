@@ -3,22 +3,23 @@ Spatial Analysis F* Engine
 Installation
 ============
 
-#. Install dependencies::
+#. Install dependencies
+   
+   For Ubuntu::
 
     sudo apt-get install python-numpy python-gdal python-nose
+
+   For Mac OSX::
+
+    brew install numpy gdal
+    
 
 #. Install this package::
 
     pip install python-safe
 
    If you do not have ``pip`` installed but only ``easy_install``,
-   you can run the following line to get pip and then try again::
-
-    sudo easy_install pip
-
-   If you are not under a virtualenv (you should) you can do::
-   
-    sudo pip install python-safe
+   you can do ``easy_install pip`` and then use it to install ``python-safe``.
 
 #. Run the tests::
 
