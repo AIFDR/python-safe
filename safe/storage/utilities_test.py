@@ -13,9 +13,8 @@ TESTDATA = os.path.abspath(os.path.join(os.path.dirname(__file__),
 # Known feature counts in test data
 FEATURE_COUNTS = {'schools.shp': 144,
                   'tsunami_exposure.shp': 7529,
-                  'kecamatan_geo.shp': 42,
                   'buildings.shp': 3896,
-                  'indonesia_highway_sample.shp': 2,
+                  'highway.shp': 2,
                   'buildings_poly.shp': 79}
 
 # For testing

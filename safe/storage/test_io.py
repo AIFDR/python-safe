@@ -1541,7 +1541,7 @@ class Test_IO(unittest.TestCase):
         assert numpy.allclose(V2, expected_V2), msg
 
         # Realistic polygon
-        filename = '%s/%s' % (TESTDATA, 'indonesia_highway_sample.shp')
+        filename = '%s/%s' % (TESTDATA, 'highway.shp')
         layer = read_layer(filename)
         geometry = layer.get_geometry()
         attributes = layer.get_data()
@@ -1600,7 +1600,7 @@ class Test_IO(unittest.TestCase):
         """
 
         # Read and verify test data
-        vectorname = 'indonesia_highway_sample.shp'
+        vectorname = 'highway.shp'
 
         filename = '%s/%s' % (TESTDATA, vectorname)
         layer = read_layer(filename)
