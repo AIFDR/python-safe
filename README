@@ -52,3 +52,9 @@ Installation
 
    You can pass additional parameters to the test function, for example: ``verbose=2``
    to view the test names.
+
+
+Thanks
+======
+
+This package was originally created with funding from AusAID, Indonesia's BNPB, The World Bank and GFDRR.
