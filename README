@@ -1,4 +1,5 @@
 **safe** - spatial analysis functional engine
+=============================================
 
 Python based toolkit to implement spatial analysis that involve raster and vector data.
 
