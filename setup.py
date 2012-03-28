@@ -10,8 +10,8 @@ def read(fname):
 
 MAJOR = 0
 MINOR = 1
-MICRO = 22
-ISRELEASED = True
+MICRO = 23
+ISRELEASED = False
 VERSION = '%d.%d.%d' % (MAJOR, MINOR, MICRO)
 
 # Return the git revision as a string
