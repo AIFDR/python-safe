@@ -11,7 +11,7 @@ def read(fname):
 MAJOR = 0
 MINOR = 1
 MICRO = 17
-ISRELEASED = False
+ISRELEASED = True
 VERSION = '%d.%d.%d' % (MAJOR, MINOR, MICRO)
 
 # Return the git revision as a string
@@ -79,6 +79,7 @@ if not release:
         a.close()
 
     return FULLVERSION
+
 
 # Creates safe/version.py and returns the full version
 full_version = write_version_py()
