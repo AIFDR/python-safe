@@ -5,7 +5,7 @@ Python based toolkit to implement spatial analysis that involve raster and vecto
 
 It was built because we did not want to worry about the differences between osgeo.gdal and osgeo.ogr, or WCS and WFS.
 
-This happens when you mix mathematicians and engineers and task them to come up with simulations to prepare for natural hazards with very short deadlines.
+This is the result of mixing mathematicians and engineers and tasking them to create simulations to prepare for natural hazards with very short deadlines.
 
 Features
 ========
