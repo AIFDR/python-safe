@@ -104,8 +104,8 @@ class Test_Engine(unittest.TestCase):
         """
 
         # Name file names for hazard level, exposure and expected fatalities
-        hazard_filename = '%s/earthquake_clip.tif' % TESTDATA
-        exposure_filename = '%s/Population_2010_clip.tif' % TESTDATA
+        hazard_filename = '%s/earthquake.tif' % TESTDATA
+        exposure_filename = '%s/population.tif' % TESTDATA
 
         # Calculate impact using API
         H = read_layer(hazard_filename)
@@ -168,8 +168,8 @@ class Test_Engine(unittest.TestCase):
         """
 
         # Name file names for hazard level, exposure and expected fatalities
-        hazard_filename = '%s/earthquake_clip.tif' % TESTDATA
-        exposure_filename = '%s/Population_2010_clip.tif' % TESTDATA
+        hazard_filename = '%s/earthquake.tif' % TESTDATA
+        exposure_filename = '%s/population.tif' % TESTDATA
 
         # Calculate impact using API
         H = read_layer(hazard_filename)
@@ -233,7 +233,7 @@ class Test_Engine(unittest.TestCase):
 
         # Name file names for hazard level, exposure and expected fatalities
 
-        population = 'Population_Jakarta_geographic.asc'
+        population = 'population_city.asc'
         plugin_name = 'HKVtest'
 
         # Expected values from HKV
@@ -241,8 +241,7 @@ class Test_Engine(unittest.TestCase):
         expected_strings = ['<b>2480</b>', '<b>1533</b>']
 
         i = 0
-        for filename in ['Flood_Current_Depth_Jakarta_geographic.asc',
-                         'Flood_Design_Depth_Jakarta_geographic.asc']:
+        for filename in ['flood.asc',]:
 
             hazard_filename = os.path.join(TESTDATA, filename)
             exposure_filename = os.path.join(TESTDATA, population)
@@ -328,7 +327,7 @@ class Test_Engine(unittest.TestCase):
         building locations (vector data).
         """
 
-        for haz_filename in ['Flood_Current_Depth_Jakarta_geographic.asc',
+        for haz_filename in ['flood.asc',
                              'Flood_Design_Depth_Jakarta_geographic.asc']:
 
             # Name file names for hazard level and exposure
@@ -364,13 +363,13 @@ class Test_Engine(unittest.TestCase):
         building locations (vector data).
         """
 
-        for mmi_filename in ['lembang_mmi_hazmap.asc',
-                             'earthquake_clip.tif',  # NaN's
-                             'Lembang_Earthquake_Scenario.asc']:
+        for mmi_filename in ['hazmap.asc',
+                             'earthquake.tif',  # NaN's
+                             ]:
 
             # Name file names for hazard level and exposure
             hazard_filename = '%s/%s' % (TESTDATA, mmi_filename)
-            exposure_filename = '%s/lembang_schools.shp' % TESTDATA
+            exposure_filename = '%s/schools.shp' % TESTDATA
 
             # Calculate impact using API
             H = read_layer(hazard_filename)
@@ -401,7 +400,7 @@ class Test_Engine(unittest.TestCase):
             iattributes = impact_vector.get_data()
 
             # First check that interpolated MMI was done as expected
-            fid = open('%s/lembang_schools_percentage_loss_and_mmi.txt'
+            fid = open('%s/quake_schools_percentage_loss_and_mmi.txt'
                        % TESTDATA)
             reference_points = []
             MMI = []
@@ -500,7 +499,7 @@ class Test_Engine(unittest.TestCase):
         """
 
         # FIXME: Still needs some reference data to compare to
-        for mmi_filename in ['Shakemap_Padang_2009.asc',
+        for mmi_filename in ['shakemap.asc',
                              'Lembang_Earthquake_Scenario.asc']:
 
             # Name file names for hazard level and exposure
@@ -560,8 +559,7 @@ class Test_Engine(unittest.TestCase):
         # no reference data. It does check the sanity of values as
         # far as possible.
 
-        hazard_filename = ('%s/tsunami_max_inundation_depth_BB_'
-                           'geographic.asc' % TESTDATA)
+        hazard_filename = ('%s/tsunami_depth.asc' % TESTDATA)
         exposure_filename = ('%s/tsunami_exposure_BB.shp' % TESTDATA)
         exposure_with_depth_filename = ('%s/tsunami_exposure_BB_'
                                         'with_depth.shp' % TESTDATA)
@@ -678,8 +676,8 @@ class Test_Engine(unittest.TestCase):
         # FIXME - when we know how to reproject, replace hazard
         # file with UTM version (i.e. without _geographic).
         hazard_filename = os.path.join(TESTDATA,
-                                       'Ashload_Gede_VEI4_geographic.asc')
-        exposure_filename = os.path.join(TESTDATA, 'lembang_schools.shp')
+                                       'ashload.asc')
+        exposure_filename = os.path.join(TESTDATA, 'schools.shp')
 
         # Calculate impact using API
         H = read_layer(hazard_filename)
@@ -899,8 +897,8 @@ class Test_Engine(unittest.TestCase):
         """
 
         # Name file names for hazard level, exposure and expected fatalities
-        hazard_filename = '%s/lembang_mmi_hazmap.asc' % TESTDATA
-        exposure_filename = '%s/lembang_schools.shp' % TESTDATA
+        hazard_filename = '%s/hazmap.asc' % TESTDATA
+        exposure_filename = '%s/schools.shp' % TESTDATA
 
         # Read input data
         hazard_raster = read_layer(hazard_filename)
@@ -919,7 +917,7 @@ class Test_Engine(unittest.TestCase):
         assert numpy.allclose(Icoordinates, coordinates)
 
         # Check that interpolated MMI was done as expected
-        fid = open('%s/lembang_schools_percentage_loss_and_mmi.txt' % TESTDATA)
+        fid = open('%s/schools_percentage_loss_and_mmi.txt' % TESTDATA)
         reference_points = []
         MMI = []
         DAM = []
@@ -957,8 +955,7 @@ class Test_Engine(unittest.TestCase):
         """
 
         # Name file names for hazard level, exposure and expected fatalities
-        hazard_filename = ('%s/tsunami_max_inundation_depth_BB_'
-                           'geographic.asc' % TESTDATA)
+        hazard_filename = ('%s/tsunami_depth.asc' % TESTDATA)
         exposure_filename = ('%s/tsunami_exposure_BB.shp' % TESTDATA)
 
         # Read input data
@@ -996,9 +993,9 @@ class Test_Engine(unittest.TestCase):
         """
 
         # Name file names for hazard level, exposure and expected fatalities
-        hazard_filename = ('%s/maumere_aos_depth_20m_land_wgs84.asc'
+        hazard_filename = ('%s/tsunami_depth2.asc'
                            % TESTDATA)
-        exposure_filename = ('%s/maumere_pop_prj.shp' % TESTDATA)
+        exposure_filename = ('%s/tsunami_exposure2.shp' % TESTDATA)
 
         # Read input data
         H = read_layer(hazard_filename)
@@ -1809,11 +1806,10 @@ class Test_Engine(unittest.TestCase):
         """Layers without keywords raise exception
         """
 
-        population = 'Population_Jakarta_geographic.asc'
+        population = 'population_city.asc'
         plugin_name = 'HKVtest'
 
-        hazard_layers = ['Flood_Current_Depth_Jakarta_geographic.asc',
-                         'Flood_Design_Depth_Jakarta_geographic.asc']
+        hazard_layers = ['flood.asc',]
 
         for i, filename in enumerate(hazard_layers):
             hazard_filename = os.path.join(TESTDATA, filename)
@@ -1869,12 +1865,12 @@ class Test_Engine(unittest.TestCase):
         plugin_name = 'Padang Earthquake Building Damage Function'
 
         # Test for a range of hazard layers
-        for mmi_filename in ['Shakemap_Padang_2009.asc']:
+        for mmi_filename in ['shakemap.asc']:
                                #'Lembang_Earthquake_Scenario.asc']:
 
             # Upload input data
             hazard_filename = os.path.join(TESTDATA, mmi_filename)
-            exposure_filename = os.path.join(TESTDATA, 'Padang_WGS84.shp')
+            exposure_filename = os.path.join(TESTDATA, 'buildings.shp')
 
             # Call calculation routine
             bbox = '96.956, -5.51, 104.63933, 2.289497'
@@ -1950,8 +1946,8 @@ class Test_Engine(unittest.TestCase):
     def test_flood_on_roads(self):
         """Jakarta flood impact on roads calculated correctly
         """
-        floods = 'Flood_Current_Depth_Jakarta_geographic.asc'
-        roads = 'indonesia_highway_sample.shp'
+        floods = 'flood.asc'
+        roads = 'highway.shp'
         plugin_name = 'Flood Road Impact Function'
 
         hazard_filename = os.path.join(TESTDATA, floods)
