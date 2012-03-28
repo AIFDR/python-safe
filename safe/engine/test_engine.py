@@ -327,12 +327,11 @@ class Test_Engine(unittest.TestCase):
         building locations (vector data).
         """
 
-        for haz_filename in ['flood.asc',
-                             'Flood_Design_Depth_Jakarta_geographic.asc']:
+        for haz_filename in ['flood.asc',]:
 
             # Name file names for hazard level and exposure
             hazard_filename = '%s/%s' % (TESTDATA, haz_filename)
-            exposure_filename = ('%s/OSM_building_polygons_20110905.shp'
+            exposure_filename = ('%s/building_polyg.shp'
                                  % TESTDATA)
 
             # Calculate impact using API
@@ -560,7 +559,7 @@ class Test_Engine(unittest.TestCase):
         # far as possible.
 
         hazard_filename = ('%s/tsunami_depth.asc' % TESTDATA)
-        exposure_filename = ('%s/tsunami_exposure_BB.shp' % TESTDATA)
+        exposure_filename = ('%s/tsunami_exposure.shp' % TESTDATA)
         exposure_with_depth_filename = ('%s/tsunami_exposure_BB_'
                                         'with_depth.shp' % TESTDATA)
         reference_impact_filename = ('%s/tsunami_impact_assessment_'
@@ -917,7 +916,7 @@ class Test_Engine(unittest.TestCase):
         assert numpy.allclose(Icoordinates, coordinates)
 
         # Check that interpolated MMI was done as expected
-        fid = open('%s/schools_percentage_loss_and_mmi.txt' % TESTDATA)
+        fid = open('%s/quake_schools_percentage_loss_and_mmi.txt' % TESTDATA)
         reference_points = []
         MMI = []
         DAM = []
@@ -956,7 +955,7 @@ class Test_Engine(unittest.TestCase):
 
         # Name file names for hazard level, exposure and expected fatalities
         hazard_filename = ('%s/tsunami_depth.asc' % TESTDATA)
-        exposure_filename = ('%s/tsunami_exposure_BB.shp' % TESTDATA)
+        exposure_filename = ('%s/tsunami_exposure.shp' % TESTDATA)
 
         # Read input data
         hazard_raster = read_layer(hazard_filename)
