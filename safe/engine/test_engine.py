@@ -331,7 +331,7 @@ class Test_Engine(unittest.TestCase):
 
             # Name file names for hazard level and exposure
             hazard_filename = '%s/%s' % (TESTDATA, haz_filename)
-            exposure_filename = ('%s/building_polyg.shp'
+            exposure_filename = ('%s/buildings_poly.shp'
                                  % TESTDATA)
 
             # Calculate impact using API
@@ -502,7 +502,7 @@ class Test_Engine(unittest.TestCase):
 
             # Name file names for hazard level and exposure
             hazard_filename = '%s/%s' % (TESTDATA, mmi_filename)
-            exposure_filename = ('%s/building_poly.shp'
+            exposure_filename = ('%s/buildings_poly.shp'
                                  % TESTDATA)
 
             # Calculate impact using API
