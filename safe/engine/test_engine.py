@@ -498,12 +498,11 @@ class Test_Engine(unittest.TestCase):
         """
 
         # FIXME: Still needs some reference data to compare to
-        for mmi_filename in ['shakemap.asc',
-                             'Lembang_Earthquake_Scenario.asc']:
+        for mmi_filename in ['shakemap.asc',]:
 
             # Name file names for hazard level and exposure
             hazard_filename = '%s/%s' % (TESTDATA, mmi_filename)
-            exposure_filename = ('%s/OSM_building_polygons_20110905.shp'
+            exposure_filename = ('%s/building_poly.shp'
                                  % TESTDATA)
 
             # Calculate impact using API
