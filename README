@@ -24,7 +24,7 @@ Installation
 
    To install a development version instead of the last release you can do::
 
-    pip install -e git+https://ingenieroariel@github.com/AIFDR/python-safe.git#egg=python-safe
+    pip install -e git+git://github.com/AIFDR/python-safe.git#egg=python-safe
 
 #. To verify everything is working as it should do, open a python shell and do::
 
