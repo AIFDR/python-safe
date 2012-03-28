@@ -11,7 +11,7 @@ def read(fname):
 MAJOR = 0
 MINOR = 1
 MICRO = 22
-ISRELEASED = False
+ISRELEASED = True
 VERSION = '%d.%d.%d' % (MAJOR, MINOR, MICRO)
 
 # Return the git revision as a string
@@ -86,7 +86,7 @@ full_version = write_version_py()
 
 setup(name          = 'python-safe',
       version       = full_version,
-      description   = 'Spatial Analysis F* Engine',
+      description   = 'Spatial Analysis Functional Engine',
       license       = 'BSD',
       keywords      = 'gis vector feature raster data',
       author        = 'Ole Nielsen',
