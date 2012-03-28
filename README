@@ -1,4 +1,22 @@
-Spatial Analysis F* Engine
+**safe** - spatial analysis functional engine
+
+Python based toolkit to implement spatial analysis that involve raster and vector data.
+
+It was built because we did not want to worry about the differences between osgeo.gdal and osgeo.ogr, or WCS and WFS.
+
+This happens when you mix mathematicians and engineers and task them to come up with simulations to prepare for natural hazards with very short deadlines.
+
+Features
+========
+
+*. Unified API to work with Raster and Vector objects.
+*. Uses GDAL/OGR and Numpy in the backend.
+*. Simple plugin module for creating your own functions and registering them in the engine.
+*. Built-in interpolation operations for most common needs (Raster - Raster, Raster - Point, Raster - Polygon )
+*. Autodiscovery of compatible functions based on layer metadata.
+*. Support for output styles (SLD - OGC Styled Layer Descriptors).
+*. Able to use layers from remote OGC compatible web services (WFS / WCS) (not implemented)
+*. Designed to be easy to implement within QGIS and GeoNode.
 
 Installation
 ============
